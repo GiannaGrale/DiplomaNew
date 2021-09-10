@@ -52,9 +52,10 @@ public final class ReadProperties {
     public String getAnnouncementMessage() {
         return properties.getProperty("announcementMessage");
     }
-    public String getNameProject(){return properties.getProperty("nameProject");}
 
-    public String getNewNameProject(){return properties.getProperty("editNameProject");}
+    public String getNameProject() {
+        return properties.getProperty("nameProject");
+    }
 
     public String getBrowserName() {
         return properties.getProperty("browser");
@@ -68,7 +69,4 @@ public final class ReadProperties {
         return Integer.parseInt(properties.getProperty("timeout"));
     }
 
-    public String getSearch() {
-        return properties.getProperty("search");
-    }
 }
