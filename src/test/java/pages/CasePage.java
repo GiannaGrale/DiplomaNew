@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 public class CasePage extends BasePage {
     private final static String endpoint = "index.php?/cases";
     private final static By test_Cases_Title_By = By.id("title");
-    private final static By test_Cases_ADD_By = By.xpath("//div/button[@id='accept']");
+    private final static By test_Cases_ADD_By = By.id("accept");
     private final static By delete_Attachments_By = By.id("libraryDeleteAttachment");
 
 

@@ -24,15 +24,4 @@ public class ProjectStep extends BaseStep {
         projectPage.getDeleteConfirmationButton().click();
         return this;
     }
-
-    public void boundaryValues(String chars) {
-        ProjectPage projectPage = new ProjectPage(driver, true);
-        projectPage.setNameInput(chars);
-        projectPage.clickAddProject();
-    }
-
-    public int countActualSymbols() {
-        ProjectPage projectPage = new ProjectPage(driver, false);
-        return projectPage.getHeaderLength();
-    }
 }
