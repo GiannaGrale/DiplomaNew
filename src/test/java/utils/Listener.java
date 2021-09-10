@@ -1,6 +1,5 @@
 package utils;
 
-
 import baseEntities.BaseTest;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
