@@ -41,7 +41,7 @@ public class AnnaSmokeTest extends BaseTest {
 
     @Features(value = {@Feature("Login"), @Feature("Test Case")})
     @Test(description = "adding a testcase with file(picture)")
-    public void createTestCaseWithAttachment() throws InterruptedException, AWTException {
+    public void createTestCaseWithAttachmentTest() throws InterruptedException, AWTException {
         CaseStep caseStep = new LoginStep(driver)
                 .correctLogin(properties.getLogin(), properties.getPassword())
                 .addProjectWithTestCase(properties.getProjectName(), properties.getAnnouncementMessage())
