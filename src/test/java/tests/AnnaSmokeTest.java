@@ -2,6 +2,7 @@ package tests;
 
 import baseEntities.BaseTest;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Features;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -38,13 +39,13 @@ public class AnnaSmokeTest extends BaseTest {
         Assert.assertEquals(loginStep.getLoginPage().getErrorMessageText().trim(), "Field Email/User is too long (250 characters at most).");
     }
 
-    @Feature("Test Case")
+    @Features(value = {@Feature("Login"), @Feature("Test Case")})
     @Test(description = "adding a testcase with file(picture)")
-    public void uploadTestCaseCreationTest() throws InterruptedException, AWTException {
+    public void createTestCaseWithAttachment() throws InterruptedException, AWTException {
         CaseStep caseStep = new LoginStep(driver)
                 .correctLogin(properties.getLogin(), properties.getPassword())
                 .addProjectWithTestCase(properties.getProjectName(), properties.getAnnouncementMessage())
                 .addTestCaseWithFile(properties.getProjectName());
-        Assert.assertTrue(caseStep.getCasePage().deleteAttachment().isDisplayed());
+        Assert.assertEquals(caseStep.getCasePage().deleteAttachment().getText(), "Delete");
     }
 }

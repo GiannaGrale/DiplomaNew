@@ -21,6 +21,7 @@ public class CaseStep extends BaseStep {
     public CaseStep(WebDriver driver) {
         super(driver);
     }
+
     @Step("Add a test case to the project '{projectName}'")
     public CaseStep addTestCaseWithFile(String projectName) throws InterruptedException, AWTException {
         DashboardPage dashboardPage = new DashboardPage(driver, true);
@@ -45,15 +46,15 @@ public class CaseStep extends BaseStep {
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
 
-        WebDriverWait webDriverWait = new WebDriverWait(driver, 10);
-        webDriverWait.until(ExpectedConditions.visibilityOf(casePage.deleteAttachment()));
-        WebElement attachElement = driver.findElement(By.id("attachmentNewSubmit"));
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 20);
+        webDriverWait.until(ExpectedConditions.textToBePresentInElement(casePage.deleteAttachment(), "Delete"));
+        WebElement attachElement = webDriverWait.until(ExpectedConditions.elementToBeClickable(By.id("attachmentNewSubmit")));
         attachElement.click();
         casePage.getTestCaseADD();
         return this;
     }
 
-    String getFile(){
+    String getFile() {
         return new File("Man-Silhouette.jpg").getAbsolutePath();
     }
 }
