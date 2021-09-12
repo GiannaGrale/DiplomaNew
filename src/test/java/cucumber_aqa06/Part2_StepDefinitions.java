@@ -30,14 +30,12 @@ public class Part2_StepDefinitions extends BaseGUIStep {
     @And("successfulSignIn")
     public void successfulSignIn() {
         loginStep.correctLogin(props.getLogin(), props.getPassword());
-        Assert.assertEquals(loginStep.getDashboardPage().getDashboardButtonText(), "DASHBOARD");
     }
 
     @When("Project is created")
     public void projectIsCreated() {
         CaseStep caseStep = new ProjectStep(webDriver)
                 .addProjectWithFutureTestCase(props.getProjectName(), props.getAnnouncementMessage());
-        Assert.assertEquals(caseStep.getAdminOverviewPage().getSuccessDeleteText(), "Successfully added the new project.");
     }
 
 
