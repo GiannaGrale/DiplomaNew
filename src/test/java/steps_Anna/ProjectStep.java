@@ -1,23 +1,14 @@
 package steps_Anna;
 
 import baseEntities.BaseStep;
-import core.ReadProperties;
 import io.qameta.allure.Step;
-import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
-import org.apache.http.HttpStatus;
-import org.apache.http.protocol.HTTP;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.Test;
-import pages.AdminOverviewPage;
 import pages.DashboardPage;
-import pages.ProjectOverviewPage;
 import pages.ProjectPage;
-
-import static io.restassured.RestAssured.given;
 
 
 public class ProjectStep extends BaseStep {
+
 
     public ProjectStep(WebDriver driver) {
         super(driver);
