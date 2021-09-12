@@ -1,8 +1,6 @@
 package steps_Boris;
 
 import baseEntities.BaseStep;
-import org.apache.commons.lang3.RandomStringUtils;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import pages.DashboardPage;
 import pages.ProjectPage;

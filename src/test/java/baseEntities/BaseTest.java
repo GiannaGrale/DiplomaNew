@@ -2,6 +2,7 @@ package baseEntities;
 
 import core.BrowserService;
 import core.ReadProperties;
+import io.cucumber.java.en.Given;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -17,6 +18,7 @@ public class BaseTest {
     protected ReadProperties properties;
     protected Waits waits;
 
+
     @BeforeTest
     public void setupTest(){
         properties = ReadProperties.getInstance();
@@ -24,9 +26,9 @@ public class BaseTest {
 
     @BeforeMethod
     public void setupMethod(){
-
         driver = new BrowserService().getDriver();
         waits = new Waits(driver, ReadProperties.getInstance().getTimeOut());
+
     }
     @AfterMethod
     public void tearDownMethod(){

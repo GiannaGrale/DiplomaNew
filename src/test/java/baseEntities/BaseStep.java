@@ -5,14 +5,12 @@ import pages.*;
 import utils.Waits;
 
 public class BaseStep {
-
     protected WebDriver driver;
     protected Waits wait;
 
     public BaseStep(WebDriver driver) {
         this.driver = driver;
         this.wait = new Waits(driver, 20);
-
     }
 
     public LoginPage getLoginPage() {
@@ -35,4 +33,7 @@ public class BaseStep {
         return new AdminOverviewPage(driver, false);
     }
 
+    public CasesOverviewPage getCaseOverviewPage() {
+        return new CasesOverviewPage(driver, false);
+    }
 }

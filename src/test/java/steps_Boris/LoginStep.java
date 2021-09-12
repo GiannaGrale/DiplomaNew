@@ -2,9 +2,7 @@ package steps_Boris;
 
 import baseEntities.BaseStep;
 import org.openqa.selenium.WebDriver;
-import pages.DashboardPage;
 import pages.LoginPage;
-import pages.ProjectPage;
 
 
 public class LoginStep extends BaseStep {

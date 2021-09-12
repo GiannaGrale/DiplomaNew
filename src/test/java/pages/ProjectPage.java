@@ -18,7 +18,6 @@ public class ProjectPage extends BasePage {
     private final static String delete_Project_Button_By = "//tr/td/a[contains(text(),'replace')]/following::div[3]";
     private final static By delete_Confirmation_Window_By = By.xpath("//div[@class='icon-progress-inline']/following::input");
     private final static By delete_Confirmation_Button_By = By.xpath("//div[@class='icon-progress-inline']/following::a[1]");
-    private final static By get_Header_By = By.className("content-header-title-tooltip");
 
     public ProjectPage(WebDriver driver, boolean openPageByURL) {
         super(driver, openPageByURL);
@@ -54,13 +53,7 @@ public class ProjectPage extends BasePage {
         return driver.findElement(add_Project_Button_By);
     }
 
-    public WebElement getHeader() {
-        return driver.findElement(get_Header_By);
-    }
 
-    public int getHeaderLength() {
-        return getHeader().getText().length();
-    }
 
     //Метод на ввод имени проекта
     public WebElement getNameInput (){return driver.findElement(name_Input_By);}

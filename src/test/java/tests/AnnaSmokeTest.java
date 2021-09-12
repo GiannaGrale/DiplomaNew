@@ -39,13 +39,13 @@ public class AnnaSmokeTest extends BaseTest {
         Assert.assertEquals(loginStep.getLoginPage().getErrorMessageText().trim(), "Field Email/User is too long (250 characters at most).");
     }
 
-    @Features(value = {@Feature("Login"), @Feature("Test Case")})
+    @Features(value = {@Feature("Login"), @Feature("Project"), @Feature("Test Case")})
     @Test(description = "adding a testcase with file(picture)")
     public void createTestCaseWithAttachmentTest() throws InterruptedException, AWTException {
         CaseStep caseStep = new LoginStep(driver)
                 .correctLogin(properties.getLogin(), properties.getPassword())
-                .addProjectWithTestCase(properties.getProjectName(), properties.getAnnouncementMessage())
+                .addProjectWithFutureTestCase(properties.getProjectName(), properties.getAnnouncementMessage())
                 .addTestCaseWithFile(properties.getProjectName());
-        Assert.assertEquals(caseStep.getCasePage().deleteAttachment().getText(), "Delete");
+        Assert.assertEquals(caseStep.getCaseOverviewPage().getMessageSuccess().getText(), "Successfully added the new test case. Add another");
     }
 }

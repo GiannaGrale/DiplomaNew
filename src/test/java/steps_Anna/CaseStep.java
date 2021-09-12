@@ -3,11 +3,13 @@ package steps_Anna;
 import baseEntities.BaseStep;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.CasePage;
+import pages.CasesOverviewPage;
 import pages.DashboardPage;
 import pages.ProjectOverviewPage;
 
@@ -50,7 +52,9 @@ public class CaseStep extends BaseStep {
         webDriverWait.until(ExpectedConditions.textToBePresentInElement(casePage.deleteAttachment(), "Delete"));
         WebElement attachElement = webDriverWait.until(ExpectedConditions.elementToBeClickable(By.id("attachmentNewSubmit")));
         attachElement.click();
-        casePage.getTestCaseADD();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", casePage.getTestCaseADD());
+        casePage.getTestCaseADD().click();
+        CasesOverviewPage casesOverviewPage = new CasesOverviewPage(driver, false);
         return this;
     }
 
