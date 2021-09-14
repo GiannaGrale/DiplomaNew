@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Default suite" >
-    <test name="Ann's GUI tests">
-        <classes>
-            <class name="tests.AnnaSmokeTest"/>
-        </classes>
-    </test>
-    <test name="Boris' GUI test">
-        <classes>
-            <class name="tests.BorisSmokeTest"/>
-        </classes>
-    </test>
+<suite name="API tests suite" >
     <test name="API post tests">
         <classes>
             <class name="api_tests.API_post_test"/>
@@ -24,6 +14,16 @@
     <test name="API AFE tests">
         <classes>
             <class name="api_tests.API_get_AFE_tests"/>
+        </classes>
+    </test>
+    <test name="Ann's GUI tests">
+        <classes>
+            <class name="tests.AnnaSmokeTest"/>
+        </classes>
+    </test>
+    <test name="Boris' GUI test">
+        <classes>
+            <class name="tests.BorisSmokeTest"/>
         </classes>
     </test>
 </suite>
