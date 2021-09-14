@@ -13,8 +13,6 @@ public class LoginPage extends BasePage {
     private final static By password_Input_By = By.id("password");
     private final static By login_Button_By = By.id("button_primary");
     private final static By error_Message_By = By.className("error-text");
-    private final static By error_Password_By = By.cssSelector(".display-flex .loginpage-message");
-    private final static By error_Login_By = By.cssSelector(".loginpage-message-image.loginpage-message ");
 
 
     public LoginPage(WebDriver driver, boolean openPageByURL) {
@@ -66,6 +64,5 @@ public class LoginPage extends BasePage {
     public void setPassword(String text) { getPasswordInput().sendKeys(text); }
 
     public void clickLoginButton() { getLoginButton().click(); }
-
 }
 

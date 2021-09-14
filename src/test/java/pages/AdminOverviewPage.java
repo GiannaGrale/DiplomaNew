@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
 
 public class AdminOverviewPage extends BasePage {
     private final static String endpoint = "index.php?/admin/projects/overview";
-
     private final static By successfully_delete_By = By.cssSelector(".message-success");
 
     public AdminOverviewPage(WebDriver driver, boolean openPageByURL) {

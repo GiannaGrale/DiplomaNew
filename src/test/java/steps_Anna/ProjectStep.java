@@ -9,12 +9,13 @@ import pages.ProjectPage;
 
 public class ProjectStep extends BaseStep {
 
+
     public ProjectStep(WebDriver driver) {
         super(driver);
     }
 
     @Step("Add a project with the following name '{projectName}', and announcement '{projectName}'")
-    public ProjectStep addProject (String projectName, String announcement) {
+    public ProjectStep addProject(String projectName, String announcement) {
         new DashboardPage(driver, true).getAddProjectButton().click();
         ProjectPage projectPage = new ProjectPage(driver, true);
         projectPage.getProjectNameInput().sendKeys(projectName);
@@ -24,7 +25,7 @@ public class ProjectStep extends BaseStep {
     }
 
     @Step("Add a project with the following name '{projectName}', and announcement '{projectName}'")
-    public CaseStep addProjectWithTestCase(String projectName, String announcement) {
+    public CaseStep addProjectWithFutureTestCase(String projectName, String announcement) {
         addProject(projectName, announcement);
         return new CaseStep(driver);
     }

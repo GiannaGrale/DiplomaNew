@@ -6,12 +6,11 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class ProjectOverviewPage extends BasePage {
+public class CasesOverviewPage extends BasePage {
+    private final static String endpoint = "index.php?/cases/view";
+    private final static By message_Success_By = By.className("message-success");
 
-    private final static String endpoint = "index.php?/projects/overview";
-    private final static By test_Cases_Add_By = By.id("sidebar-cases-add");
-
-    public ProjectOverviewPage(WebDriver driver, boolean openPageByURL) {
+    public CasesOverviewPage(WebDriver driver, boolean openPageByURL) {
         super(driver, openPageByURL);
     }
 
@@ -23,15 +22,14 @@ public class ProjectOverviewPage extends BasePage {
     @Override
     public boolean isPageOpened() {
         try {
-            return getTestCaseADDButton().isDisplayed();
+            return getMessageSuccess().isDisplayed();
         } catch (NoSuchElementException ex) {
             return false;
         }
     }
 
-    public WebElement getTestCaseADDButton() {
-        return driver.findElement(test_Cases_Add_By);
+    public WebElement getMessageSuccess() {
+        return driver.findElement(message_Success_By);
     }
 }
-
 
