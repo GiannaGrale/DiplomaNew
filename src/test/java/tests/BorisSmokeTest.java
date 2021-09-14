@@ -6,8 +6,10 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.DashboardPage;
+import pages.DialogBoxPage;
 import pages.ProjectPage;
 import steps_Boris.DashboardSteps;
+import steps_Boris.DialogBoxStep;
 import steps_Boris.LoginStep;
 import steps_Boris.ProjectStep;
 
@@ -51,9 +53,9 @@ public class BorisSmokeTest extends BaseTest {
     public void positiveTest4() {
         LoginStep loginStep = new LoginStep(driver);
         loginStep.successfulLogin(properties.getLogin(), properties.getPassword());
-        DashboardSteps dashboardSteps = new DashboardSteps(driver);
-        dashboardSteps.clickOnDialogueBox();
-        Assert.assertEquals(new DashboardPage(driver, false).textInTimeFrame().getText(), "Select a different time frame for the chart.");
+        DialogBoxStep dialogBoxStep = new DialogBoxStep(driver);
+        dialogBoxStep.clickOnDialogueBox();
+        Assert.assertEquals(new DialogBoxPage(driver, false).textInTimeFrame().getText(), "Select a different time frame for the chart.");
     }
 
     //---------------- Invocations
@@ -88,10 +90,10 @@ public class BorisSmokeTest extends BaseTest {
     @Feature("Dialogue box")
     @Test(description = "dialog box test")
     public void positiveInvocationsTest4() {
-        DashboardSteps dashboardSteps = new LoginStep(driver)
-                .correctLogin (properties.getLogin(), properties.getPassword())
+        DialogBoxStep dialogBoxStep = new LoginStep(driver)
+                .correctLoginForDialog(properties.getLogin(), properties.getPassword())
                 .clickOnDialogueBox();
-        Assert.assertEquals(dashboardSteps.getDashboardPage().textInTimeFrame().getText(), "Select a different time frame for the chart.");
+        Assert.assertEquals(dialogBoxStep.getDialogBoxPage().textInTimeFrame().getText(), "Select a different time frame for the chart.");
     }
 }
 
