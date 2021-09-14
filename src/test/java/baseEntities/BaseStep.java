@@ -34,7 +34,7 @@ public class BaseStep {
     }
 
     public CasesOverviewPage getCaseOverviewPage() {
-        return new CasesOverviewPage(driver, false);
+        return new CasesOverviewPage(driver, false);}
 
     public DialogBoxPage getDialogBoxPage() {
         return new DialogBoxPage(driver, false);
