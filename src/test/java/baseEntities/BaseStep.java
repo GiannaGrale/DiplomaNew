@@ -35,4 +35,8 @@ public class BaseStep {
         return new AdminOverviewPage(driver, false);
     }
 
+    public DialogBoxPage getDialogBoxPage() {
+        return new DialogBoxPage(driver, false);
+    }
+
 }

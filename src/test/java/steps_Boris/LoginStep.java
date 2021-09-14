@@ -33,4 +33,9 @@ public class LoginStep extends BaseStep {
         successfulLogin(username, password);
         return new DashboardSteps(driver);
     }
+
+    public DialogBoxStep correctLoginForDialog(String username, String password) {
+        successfulLogin(username, password);
+        return new DialogBoxStep(driver);
+    }
 }
