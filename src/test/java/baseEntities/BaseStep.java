@@ -1,5 +1,7 @@
 package baseEntities;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import pages.*;
 import utils.Waits;
@@ -7,6 +9,7 @@ import utils.Waits;
 public class BaseStep {
     protected WebDriver driver;
     protected Waits wait;
+    protected final Logger logger = LogManager.getLogger(this);
 
     public BaseStep(WebDriver driver) {
         this.driver = driver;

@@ -25,6 +25,7 @@ public class CaseStep extends BaseStep {
 
     @Step("Add a test case to the project '{projectName}'")
     public CaseStep addTestCaseWithFile(String projectName) throws AWTException {
+        logger.debug("try to upload a file...");
         DashboardPage dashboardPage = new DashboardPage(driver, true);
         dashboardPage.getChosenProject(projectName).click();
         ProjectOverviewPage projectOverViewPage = new ProjectOverviewPage(driver, false);
@@ -53,6 +54,7 @@ public class CaseStep extends BaseStep {
         attachElement.click();
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", casePage.getTestCaseADD());
         casePage.getTestCaseADD().click();
+        logger.debug("file is uploaded successfully...");
         return this;
     }
 

@@ -12,10 +12,10 @@ import utils.Listener;
 public class CrossBrowserTest extends BaseCrossBrowser {
     @Test
     public void crossBrowserTest() {
-
+        logger.info("crossBrowserTest is started");
         ProjectStep projectStep = new LoginStep(driver)
                 .correctLogin(properties.getLogin(), properties.getPassword());
         Assert.assertEquals(projectStep.getDashboardPage().getDashboardButtonText().trim(), "DASHBOARD");
-
+        logger.info("crossBrowserTest is finished");
     }
 }

@@ -16,11 +16,13 @@ public class ProjectStep extends BaseStep {
 
     @Step("Add a project with the following name '{projectName}', and announcement '{projectName}'")
     public ProjectStep addProject(String projectName, String announcement) {
+        logger.debug("create a project...");
         new DashboardPage(driver, true).getAddProjectButton().click();
         ProjectPage projectPage = new ProjectPage(driver, true);
         projectPage.getProjectNameInput().sendKeys(projectName);
         projectPage.getAnnouncementInput().sendKeys(announcement);
         projectPage.getAddProjectButton().click();
+        logger.debug("project is created...");
         return this;
     }
 
