@@ -9,7 +9,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.CasePage;
-import pages.CasesOverviewPage;
 import pages.DashboardPage;
 import pages.ProjectOverviewPage;
 
@@ -25,7 +24,7 @@ public class CaseStep extends BaseStep {
     }
 
     @Step("Add a test case to the project '{projectName}'")
-    public CaseStep addTestCaseWithFile(String projectName) throws InterruptedException, AWTException {
+    public CaseStep addTestCaseWithFile(String projectName) throws AWTException {
         DashboardPage dashboardPage = new DashboardPage(driver, true);
         dashboardPage.getChosenProject(projectName).click();
         ProjectOverviewPage projectOverViewPage = new ProjectOverviewPage(driver, false);
@@ -36,15 +35,15 @@ public class CaseStep extends BaseStep {
         wait.waitForVisibility(By.id("entityAttachmentListEmptyIcon")).click();
         wait.waitForVisibility(By.id("libraryAttachmentsAddItem")).click();
 
-        Thread.sleep(3000);
+        Robot robot = new Robot();
+        robot.delay(3000);
         StringSelection stringSelection = new StringSelection(getFile());
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
-        Robot robot = new Robot();
+
         robot.keyPress(KeyEvent.VK_CONTROL);
         robot.keyPress(KeyEvent.VK_V);
         robot.keyRelease(KeyEvent.VK_V);
         robot.keyRelease(KeyEvent.VK_CONTROL);
-        Thread.sleep(3000);
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
 
@@ -54,7 +53,6 @@ public class CaseStep extends BaseStep {
         attachElement.click();
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", casePage.getTestCaseADD());
         casePage.getTestCaseADD().click();
-        CasesOverviewPage casesOverviewPage = new CasesOverviewPage(driver, false);
         return this;
     }
 
@@ -62,4 +60,3 @@ public class CaseStep extends BaseStep {
         return new File("Man-Silhouette.jpg").getAbsolutePath();
     }
 }
-

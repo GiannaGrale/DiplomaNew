@@ -1,8 +1,8 @@
 Feature: Dialogue box
 
   Scenario:  Dialogue box test
-    Given browser is started
-    * Boris' login page is opened
-    * log in with correct credentials
-    When dashboard page is opened
-    Then dialogue box check
+    Given login page is opened
+    When logged in with correct credentials
+    * dashBoard page is opened
+    * dialogPage page is opened
+    Then dialogue box is checked
