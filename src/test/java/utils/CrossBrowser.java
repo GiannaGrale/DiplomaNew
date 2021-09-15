@@ -21,10 +21,6 @@ public class CrossBrowser {
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
                 break;
-            case "Edge":
-                WebDriverManager.edgedriver().setup();
-                driver = new EdgeDriver();
-                break;
             default:
                 throw new AssertionError("This browser is not supported");
         }
