@@ -13,10 +13,10 @@
             <parameter name="BrowserType" value="Firefox"/>
         </classes>
     </test>
-    <test name="Opera">
+    <test name="Edge">
         <classes>
             <class name="tests.CrossBrowserTest"/>
-            <parameter name="BrowserType" value="Opera"/>
+            <parameter name="BrowserType" value="Edge"/>
         </classes>
     </test>
 </suite>
