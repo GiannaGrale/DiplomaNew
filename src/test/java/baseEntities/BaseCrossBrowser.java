@@ -17,11 +17,6 @@ public class BaseCrossBrowser {
     public ReadProperties properties;
     protected final Logger logger = LogManager.getLogger(this);
 
-    @BeforeTest
-    public void setProperties() {
-        properties = ReadProperties.getInstance();
-    }
-
     @AfterMethod
     public void tearDownMethod() {
         driver.quit();
@@ -30,6 +25,7 @@ public class BaseCrossBrowser {
     @BeforeTest
     @Parameters({"BrowserType"})
     public void setUpBrowser(String browserType) {
+            properties = ReadProperties.getInstance();
         if (browserType.equalsIgnoreCase("Edge")) {
             WebDriverManager.edgedriver().setup();
             driver = new EdgeDriver();
