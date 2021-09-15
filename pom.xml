@@ -13,7 +13,8 @@
         <maven.compiler.target>8</maven.compiler.target>
         <aspectj.version>1.8.10</aspectj.version>
         <allure.version>2.13.2</allure.version>
-        <circleci>src/test/resources/circleci.xml</circleci>
+        <circleciApi>src/test/resources/circleciApi.xml</circleciApi>
+        <circleciGui>src/test/resources/circleciGui.xml</circleciGui>
         <crossBrowser>src/test/resources/crossBrowser.xml</crossBrowser>
         <cucumber>src/test/resources/testng.xml</cucumber>
 
@@ -111,7 +112,8 @@
                     <parallel>classes</parallel>
                     <threadCount>1</threadCount>
                     <suiteXmlFiles>
-                        <suiteXmlFile>${circleci}</suiteXmlFile>
+                        <suiteXmlFile>${circleciGui}</suiteXmlFile>
+                        <suiteXmlFile>${circleciApi}</suiteXmlFile>
                         <suiteXmlFile>${crossBrowser}</suiteXmlFile>
                         <suiteXmlFile>${cucumber}</suiteXmlFile>
                     </suiteXmlFiles>
