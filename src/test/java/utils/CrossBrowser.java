@@ -25,6 +25,7 @@ public class CrossBrowser {
                 driver = new FirefoxDriver();
                 break;
             default:
+                throw new AssertionError("This browser is not supported");
         }
         return driver;
     }
