@@ -13,10 +13,4 @@
             <parameter name="BrowserType" value="Firefox"/>
         </classes>
     </test>
-    <test name="Edge">
-        <classes>
-            <class name="tests.CrossBrowserTest"/>
-            <parameter name="BrowserType" value="Edge"/>
-        </classes>
-    </test>
 </suite>
