@@ -22,7 +22,7 @@ public class CrossBrowser {
                 driver = new FirefoxDriver();
                 break;
             case "Edge":
-                WebDriverManager.edgedriver ().setup ();
+                WebDriverManager.edgedriver().setup ();
                 driver = new EdgeDriver();
                 break;
             default:
