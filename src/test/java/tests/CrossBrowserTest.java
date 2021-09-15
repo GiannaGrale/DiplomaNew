@@ -1,14 +1,8 @@
 package tests;
 
 import baseEntities.BaseCrossBrowser;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import steps_Anna.LoginStep;
 import steps_Anna.ProjectStep;
@@ -17,10 +11,8 @@ import utils.Listener;
 @Listeners({Listener.class})
 public class CrossBrowserTest extends BaseCrossBrowser {
 
-
     @Test
-    @Parameters({"BrowserType"})
-    public void crossBrowserTest(String browserType) {
+    public void crossBrowserTest() {
         logger.info("crossBrowserTest is started");
         ProjectStep projectStep = new LoginStep(driver)
                 .correctLogin(properties.getLogin(), properties.getPassword());
