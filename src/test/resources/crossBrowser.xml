@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="CrossBrowser Test Suite">
+    <test name="Chrome">
+        <classes>
+            <class name="tests.CrossBrowserTest"/>
+            <parameter name="BrowserType" value="Chrome"/>
+        </classes>
+    </test>
+    <test name="Firefox">
+        <classes>
+            <class name="tests.CrossBrowserTest"/>
+            <parameter name="BrowserType" value="Firefox"/>
+        </classes>
+    </test>
+    <test name="Edge">
+        <classes>
+            <class name="tests.CrossBrowserTest"/>
+            <parameter name="BrowserType" value="Edge"/>
+        </classes>
+    </test>
+</suite>
