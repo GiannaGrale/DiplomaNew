@@ -8,6 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import steps_Anna.LoginStep;
 import steps_Anna.ProjectStep;
@@ -15,10 +16,13 @@ import utils.Listener;
 
 @Listeners({Listener.class})
 public class CrossBrowserTest extends BaseCrossBrowser {
+
+
     @Test
+    @Parameters({"BrowserType"})
     public void crossBrowserTest(String browserType) {
         logger.info("crossBrowserTest is started");
-        properties = ReadProperties.getInstance();
+
         if (browserType.equalsIgnoreCase("Edge")) {
             WebDriverManager.edgedriver().setup();
             driver = new InternetExplorerDriver();
