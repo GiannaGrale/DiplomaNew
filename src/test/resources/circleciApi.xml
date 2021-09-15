@@ -16,14 +16,4 @@
             <class name="api_tests.API_get_AFE_tests"/>
         </classes>
     </test>
-    <test name="Ann's GUI tests">
-        <classes>
-            <class name="tests.AnnaSmokeTest"/>
-        </classes>
-    </test>
-    <test name="Boris' GUI test">
-        <classes>
-            <class name="tests.BorisSmokeTest"/>
-        </classes>
-    </test>
 </suite>
