@@ -30,12 +30,12 @@ public class BaseCrossBrowser {
     @BeforeTest
     @Parameters({"BrowserType"})
     public void setUpBrowser(String browserType) {
-        if (browserType.equalsIgnoreCase("Chrome")) {
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
-        } else if (browserType.equalsIgnoreCase("Edge")) {
+        if (browserType.equalsIgnoreCase("Edge")) {
             WebDriverManager.edgedriver().setup();
             driver = new EdgeDriver();
+        } else if (browserType.equalsIgnoreCase("Chrome")) {
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
         } else if (browserType.equalsIgnoreCase("Firefox")) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
