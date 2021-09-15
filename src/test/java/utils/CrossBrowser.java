@@ -3,6 +3,7 @@ package utils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 
@@ -22,7 +23,7 @@ public class CrossBrowser {
                 break;
             case "Edge":
                 WebDriverManager.edgedriver ().setup ();
-                driver = new FirefoxDriver();
+                driver = new EdgeDriver();
                 break;
             default:
                 throw new AssertionError("This browser is not supported");
