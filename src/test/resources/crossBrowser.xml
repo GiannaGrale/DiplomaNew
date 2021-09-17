@@ -3,13 +3,13 @@
 <suite name="CrossBrowser Test Suite">
     <test name="Chrome">
         <classes>
-            <class name="tests.CrossBrowserTest"/>
+            <class name="tests.gui.CrossBrowserTest"/>
             <parameter name="BrowserType" value="Chrome"/>
         </classes>
     </test>
     <test name="Firefox">
         <classes>
-            <class name="tests.CrossBrowserTest"/>
+            <class name="tests.gui.CrossBrowserTest"/>
             <parameter name="BrowserType" value="Firefox"/>
         </classes>
     </test>

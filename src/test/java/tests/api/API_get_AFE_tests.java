@@ -1,4 +1,4 @@
-package api_tests;
+package tests.api;
 
 import endpoints.ReqresURL;
 import org.apache.http.HttpStatus;

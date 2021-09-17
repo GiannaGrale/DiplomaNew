@@ -3,17 +3,17 @@
 <suite name="API tests suite" >
     <test name="API post tests">
         <classes>
-            <class name="api_tests.API_post_test"/>
+            <class name="tests.api.API_post_test"/>
         </classes>
     </test>
     <test name="API get NFE test">
         <classes>
-            <class name="api_tests.API_get_NFE_tests"/>
+            <class name="tests.api.API_get_NFE_tests"/>
         </classes>
     </test>
     <test name="API AFE tests">
         <classes>
-            <class name="api_tests.API_get_AFE_tests"/>
+            <class name="tests.api.API_get_AFE_tests"/>
         </classes>
     </test>
 </suite>

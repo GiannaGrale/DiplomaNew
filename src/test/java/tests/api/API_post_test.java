@@ -1,4 +1,4 @@
-package api_tests;
+package tests.api;
 
 import adapters.ProjectAdapter;
 import baseEntities.BaseApiTest;
