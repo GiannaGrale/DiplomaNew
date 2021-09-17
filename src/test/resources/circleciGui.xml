@@ -3,12 +3,12 @@
 <suite name="GUI tests suite" >
     <test name="Ann's GUI tests">
         <classes>
-            <class name="tests.AnnaSmokeTest"/>
+            <class name="tests.gui.AnnaSmokeTest"/>
         </classes>
     </test>
     <test name="Boris' GUI test">
         <classes>
-            <class name="tests.BorisSmokeTest"/>
+            <class name="tests.gui.BorisSmokeTest"/>
         </classes>
     </test>
 </suite>
